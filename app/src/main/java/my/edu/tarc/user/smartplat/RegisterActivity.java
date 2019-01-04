@@ -1,5 +1,6 @@
 package my.edu.tarc.user.smartplat;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
-    private EditText editTextUsername, editTextPassword;
+    private EditText editTextUsername, editTextEmail, editTextPassword;
     private Button buttonRegister;
 
     @Override
@@ -28,9 +29,16 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        if(SharedPrefManager.getInstance(this).isLoggedIn()){
+            finish();
+            startActivity(new Intent(this, MainActivity.class));
+            return;
+        }
+
         editTextUsername = (EditText)findViewById(R.id.editTextUsername);
         editTextPassword = (EditText)findViewById(R.id.editTextPassword);
-        buttonRegister = (Button)findViewById(R.id.Login);
+        editTextEmail = (EditText)findViewById(R.id.editTextEmail);
+        buttonRegister = (Button)findViewById(R.id.Register);
 
         buttonRegister.setOnClickListener(this);
     }
@@ -38,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void registerUser(){
         final String username = editTextUsername.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
 
         try {
             StringRequest stringRequest = new StringRequest(Request.Method.POST,
@@ -66,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Map<String, String> params = new HashMap<>();
                     params.put("username", username);
                     params.put("password", password);
+                    params.put("email", email);
                     return params;
                 }
             };
@@ -80,6 +90,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view){
         if(view == buttonRegister) {
             registerUser();
+            this.finish();
         }
     }
 }

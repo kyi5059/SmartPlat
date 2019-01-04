@@ -10,6 +10,10 @@ public class SharedPrefManager {
     private static final String SHARED_PREF_NAME = "mysharedpref12";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_USER_ID = "userid";
+    private static final String KEY_USEREMAIL = "useremail";
+    private static final String KEY_USER_NAME = "Please Enter Your Name";
+    private static final String KEY_USERCONTACT = "Please Enter Your Contact";
+    private static final String KEY_USERADDRESS = "Please Enter your Address";
 
     private SharedPrefManager(Context context) {
         mCtx = context;
@@ -22,11 +26,12 @@ public class SharedPrefManager {
         return mInstance;
     }
 
-    public boolean userLogin(int id, String username){
+    public boolean userLogin(int id, String username, String email){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt(KEY_USER_ID, id);
         editor.putString(KEY_USERNAME, username);
+        editor.putString(KEY_USEREMAIL,email);
         editor.apply();
         return true;
     }
@@ -46,4 +51,51 @@ public class SharedPrefManager {
         editor.apply();
         return true;
     }
+
+    public String getUsername(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USERNAME, null);
+    }
+
+    public String getUserEmail(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USEREMAIL, null);
+    }
+
+    public void setUserName(String name){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USER_NAME, name);
+        editor.apply();
+    }
+
+    public void setUserContact(String contact){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USERCONTACT, contact);
+        editor.apply();
+    }
+
+    public void setUserAddress(String address){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USERADDRESS, address);
+        editor.apply();
+    }
+
+    public String getName(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USER_NAME, "Please Enter Your Name");
+    }
+
+    public String getUserContact(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USERCONTACT, "Please Enter Your Contact");
+    }
+
+    public String getUserAddress(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_USERADDRESS, "Please Enter your Address");
+    }
+
 }

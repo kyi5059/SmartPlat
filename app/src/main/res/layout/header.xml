@@ -6,19 +6,20 @@
     android:layout_height="160dp"
     android:background="@drawable/photo">
     <ImageView
+        android:id="@+id/Userimg"
         android:src="@drawable/ic_profile_24dp"
         android:layout_width="75dp"
         android:layout_height="75dp" />
     <TextView
+        android:id="@+id/textViewNickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kwek Wen Wei"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:layout_marginTop="5dp"/>
     <TextView
+        android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="kwekwenwei@gmail.com"
         android:textColor="@color/white"/>
 </LinearLayout>

@@ -5,15 +5,18 @@ public class Resident {
     private String Contact;
     private String Email;
     private String Address;
+    private String Image;
+    private String Username;
+    private String Password;
+
 
     public Resident() {
     }
 
-    public Resident(String name, String contact, String email, String address) {
-        Name = name;
-        Contact = contact;
+    public Resident(String email, String username, String password) {
         Email = email;
-        Address = address;
+        Username = username;
+        Password = password;
     }
 
     public String getName() {

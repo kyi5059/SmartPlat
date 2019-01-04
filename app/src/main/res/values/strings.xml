@@ -10,5 +10,9 @@
     <string name="fontsan">sans-serif-smallcaps</string>
     <string name="us">USERNAME</string>
     <string name="pw">PASSWORD</string>
+    <string name="em">EMAIL</string>
+    <string name="name">NAME</string>
+    <string name="address">ADDRESS</string>
+    <string name="phone">PHONE</string>
     <string name="desc">No Joke. Just the Charming Place to be</string>
 </resources>
