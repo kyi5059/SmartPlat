@@ -36,6 +36,18 @@ public class SharedPrefManager {
         return true;
     }
 
+    public boolean userProfile(int id, String name, String email, String contact, String address){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(KEY_USER_ID, id);
+        editor.putString(KEY_USER_NAME, name);
+        editor.putString(KEY_USEREMAIL,email);
+        editor.putString(KEY_USERCONTACT,contact);
+        editor.putString(KEY_USERADDRESS, address);
+        editor.apply();
+        return true;
+    }
+
     public boolean isLoggedIn(){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         if(sharedPreferences.getString(KEY_USERNAME,null)!= null){
@@ -82,6 +94,14 @@ public class SharedPrefManager {
         editor.putString(KEY_USERADDRESS, address);
         editor.apply();
     }
+
+    public void setUserEmail(String email){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_USEREMAIL, email);
+        editor.apply();
+    }
+
 
     public String getName(){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);

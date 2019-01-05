@@ -25,7 +25,8 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/circle"
                 android:padding="3dp"
-                android:scaleType="centerInside" />
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_user"/>
 
         </RelativeLayout>
 
@@ -80,14 +81,18 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:cursorVisible="true"
+                        android:focusableInTouchMode="true"
+                        android:enabled="true"
+                        android:inputType="text"/>
 
                     <ImageButton
-                        android:id="@+id/editName"
+                        android:id="@+id/btnName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_edit_24dp" />
+                        android:background="@drawable/ic_check_24dp" />
 
                 </RelativeLayout>
 
@@ -123,14 +128,18 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:cursorVisible="true"
+                        android:focusableInTouchMode="true"
+                        android:enabled="true"
+                        android:inputType="text" />
 
                     <ImageButton
-                        android:id="@+id/editPhone"
+                        android:id="@+id/btnPhone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_edit_24dp" />
+                        android:background="@drawable/ic_check_24dp" />
 
                 </RelativeLayout>
 
@@ -166,14 +175,18 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:cursorVisible="true"
+                        android:focusableInTouchMode="true"
+                        android:enabled="true"
+                        android:inputType="text"/>
 
                     <ImageButton
-                        android:id="@+id/editEmail"
+                        android:id="@+id/btnEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_edit_24dp" />
+                        android:background="@drawable/ic_check_24dp" />
 
                 </RelativeLayout>
 
@@ -209,14 +222,18 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="23sp" />
+                        android:textSize="23sp"
+                        android:cursorVisible="true"
+                        android:focusableInTouchMode="true"
+                        android:enabled="true"
+                        android:inputType="text"/>
 
                     <ImageButton
-                        android:id="@+id/editAddress"
+                        android:id="@+id/btnAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
-                        android:background="@drawable/ic_edit_24dp" />
+                        android:background="@drawable/ic_check_24dp" />
 
                 </RelativeLayout>
 

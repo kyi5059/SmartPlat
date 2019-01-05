@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.service:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ServiceFragment()).commit();
                 break;
+            case R.id.setting:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingFragment()).commit();
+                break;
             case R.id.logout:
                 SharedPrefManager.getInstance(this).logout();
                 finish();
