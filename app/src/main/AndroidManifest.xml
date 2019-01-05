@@ -24,6 +24,7 @@
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity android:name=".RegisterActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".EventPop"/>
     </application>
 
 </manifest>

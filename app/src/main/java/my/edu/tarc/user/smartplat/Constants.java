@@ -9,4 +9,5 @@ public class Constants {
     public static final String URL_UPDATECONTACT = ROOT_URL + "updateUser_Contact.php";
     public static final String URL_UPDATEEMAIL = ROOT_URL + "updateUser_Email.php";
     public static final String URL_UPDATEADDRESS = ROOT_URL + "updateUser_Address.php";
+    public static final String URL_SELECTEVENT = ROOT_URL + "select_event.php";
 }
