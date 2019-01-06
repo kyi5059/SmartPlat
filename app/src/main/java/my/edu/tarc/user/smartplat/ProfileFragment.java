@@ -263,6 +263,7 @@ public class ProfileFragment extends Fragment {
                                 if (!jsonObject.getBoolean("error")) {
                                     SharedPrefManager.getInstance(getContext())
                                             .setUserEmail(jsonObject.getString("email"));
+                                    MainActivity.textViewEmail.setText(jsonObject.getString("email"));
                                     Toast.makeText(getContext(),
                                             jsonObject.getString("message"),
                                             Toast.LENGTH_LONG).show();

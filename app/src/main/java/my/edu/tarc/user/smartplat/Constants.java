@@ -11,6 +11,8 @@ public class Constants {
     public static final String URL_UPDATEADDRESS = ROOT_URL + "updateUser_Address.php";
     public static final String URL_SELECTEVENT = ROOT_URL + "select_event.php";
     public static final String URL_SELECTSERVICE = ROOT_URL + "select_service.php";
+    public static final String URL_SELECTBUSINESS = ROOT_URL + "select_business.php";
+    public static final String URL_SELECTPRODUCT = ROOT_URL + "select_product.php";
     public static final String URL_UPDATEUSERNAME = ROOT_URL + "update_Username.php";
     public static final String URL_UPDATEPASSWORD = ROOT_URL + "update_Userpassword.php";
 }

@@ -83,6 +83,7 @@ public class SettingFragment extends Fragment {
                                 if (!jsonObject.getBoolean("error")) {
                                     SharedPrefManager.getInstance(getContext())
                                             .setUsername(jsonObject.getString("username"));
+                                    MainActivity.textViewNickName.setText(jsonObject.getString("username"));
                                     Toast.makeText(getContext(),
                                             jsonObject.getString("message"),
                                             Toast.LENGTH_LONG).show();
