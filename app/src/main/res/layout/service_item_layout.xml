@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageViewEvent"
+        android:id="@+id/imageViewService"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:maxHeight="100dp"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_toRightOf="@id/imageViewEvent"
+        android:layout_toRightOf="@id/imageViewService"
         android:text="TextView"
         android:textSize="20dp" />
 
@@ -34,8 +34,8 @@
         android:layout_marginTop="10dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_toEndOf="@+id/imageViewEvent"
-        android:layout_toRightOf="@+id/imageViewEvent"
+        android:layout_toEndOf="@+id/imageViewService"
+        android:layout_toRightOf="@+id/imageViewService"
         android:text="TextView"
         android:textSize="15dp" />
 </RelativeLayout>

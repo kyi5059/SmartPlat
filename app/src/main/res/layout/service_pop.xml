@@ -13,7 +13,6 @@
         android:maxHeight="200dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
-        android:tooltipText="Join Us? Click me"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <TextView
@@ -45,44 +44,12 @@
         android:layout_below="@+id/title" />
 
     <TextView
-        android:id="@+id/datetime"
+        android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/desc"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="30dp"
-        android:text="hi"
-        android:textColor="@color/grey"
-        android:textSize="20dp"
-        app:fontFamily="serif" />
-
-    <TextView
-        android:id="@+id/venue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/datetime"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:paddingLeft="30dp"
-        android:text="hi"
-        android:textColor="@color/grey"
-        android:textSize="20dp"
-        app:fontFamily="serif" />
-
-    <TextView
-        android:id="@+id/fee"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/venue"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
