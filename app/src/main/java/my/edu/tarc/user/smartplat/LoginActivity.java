@@ -111,6 +111,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view == buttonLogin) {
             userLogin();
+            /*System.out.println("Addidas Jacket: " + R.drawable.addidas_jacket);
+            System.out.println("Adidas : " + R.drawable.adidas);
+            System.out.println("Book Exhibi : " + R.drawable.book_exhibition);
+            System.out.println("Cap : " + R.drawable.cap);
+            System.out.println("Charity found : " + R.drawable.charity_foundation);
+            System.out.println("Chatto : " + R.drawable.chatto_tea);
+            System.out.println("Event1 : " + R.drawable.event1);
+            System.out.println("Event2 : " + R.drawable.event2);
+            System.out.println("Fossil : " + R.drawable.fossilwatch);
+            System.out.println("Gloves : " + R.drawable.gloves);
+            System.out.println("H&M : " + R.drawable.h_m);
+            System.out.println("Maybank : " + R.drawable.maybank);
+            System.out.println("MI8 : " + R.drawable.mi8);
+            System.out.println("Music F : " + R.drawable.musicfiesta);
+            System.out.println("Neon : " + R.drawable.neonnightrun);
+            System.out.println("Nike : " + R.drawable.nike);
+            System.out.println("Nike Air Max : " + R.drawable.nikeairmax);
+            System.out.println("Service1 : " + R.drawable.service1);
+            System.out.println("Service2 : " + R.drawable.service2);
+            System.out.println("7 Eleven : " + R.drawable.seveneleven);
+            System.out.println("U mobile : " + R.drawable.umobile);
+            System.out.println("Viper Chall : " + R.drawable.viperchallenge);
+            System.out.println("Zombie Run : " + R.drawable.zombiesrun);
+            System.out.println("Carotino : " + R.drawable.carotino);
+            System.out.println("Tealive : " + R.drawable.tealive);*/
         }
     }
 }

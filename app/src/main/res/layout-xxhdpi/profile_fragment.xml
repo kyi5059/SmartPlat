@@ -16,14 +16,14 @@
             <RelativeLayout
                 android:id="@+id/rellay1"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="250dp"
                 android:background="@drawable/grad"
                 android:paddingBottom="20dp">
 
                 <RelativeLayout
                     android:id="@+id/imgUser"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/circle_border">
@@ -49,7 +49,7 @@
                     android:layout_marginTop="15sp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:textSize="32sp" />
 
             </RelativeLayout>
 
@@ -95,7 +95,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="18sp" />
 
                             <ImageButton
                                 android:id="@+id/btnName"
@@ -142,7 +142,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="23sp" />
+                                android:textSize="18sp" />
 
                             <ImageButton
                                 android:id="@+id/btnPhone"
@@ -189,7 +189,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="23sp" />
+                                android:textSize="18sp" />
 
                             <ImageButton
                                 android:id="@+id/btnEmail"
@@ -236,7 +236,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="23sp" />
+                                android:textSize="18sp" />
 
                             <ImageButton
                                 android:id="@+id/btnAddress"
@@ -260,7 +260,5 @@
 
             </RelativeLayout>
         </RelativeLayout>
-
     </ScrollView>
-
 </RelativeLayout>

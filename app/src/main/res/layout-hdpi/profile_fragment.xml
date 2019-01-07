@@ -16,21 +16,21 @@
             <RelativeLayout
                 android:id="@+id/rellay1"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="200dp"
                 android:background="@drawable/grad"
                 android:paddingBottom="20dp">
 
                 <RelativeLayout
                     android:id="@+id/imgUser"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/circle_border">
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_margin="9dp"
                         android:adjustViewBounds="true"
                         android:background="@drawable/circle"
@@ -49,7 +49,7 @@
                     android:layout_marginTop="15sp"
                     android:fontFamily="sans-serif-light"
                     android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -79,7 +79,7 @@
                             android:drawableLeft="@drawable/ic_person_24dp"
                             android:text="@string/name"
                             android:textColor="@color/headings"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="20sp" />
+                                android:textSize="15sp" />
 
                             <ImageButton
                                 android:id="@+id/btnName"
@@ -109,7 +109,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="5dp"
                             android:background="@color/grey" />
 
                     </LinearLayout>
@@ -126,7 +126,7 @@
                             android:drawableLeft="@drawable/ic_phone_24dp"
                             android:text="@string/phone"
                             android:textColor="@color/headings"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="23sp" />
+                                android:textSize="15sp" />
 
                             <ImageButton
                                 android:id="@+id/btnPhone"
@@ -156,7 +156,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="5dp"
                             android:background="@color/grey" />
 
                     </LinearLayout>
@@ -173,7 +173,7 @@
                             android:drawableLeft="@drawable/ic_email_24dp"
                             android:text="@string/em"
                             android:textColor="@color/headings"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -189,7 +189,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="23sp" />
+                                android:textSize="15sp" />
 
                             <ImageButton
                                 android:id="@+id/btnEmail"
@@ -203,7 +203,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="5dp"
                             android:background="@color/grey" />
 
                     </LinearLayout>
@@ -220,7 +220,7 @@
                             android:drawableLeft="@drawable/ic_location_on_24dp"
                             android:text="@string/address"
                             android:textColor="@color/headings"
-                            android:textSize="18sp" />
+                            android:textSize="15sp" />
 
                         <RelativeLayout
                             android:layout_width="wrap_content"
@@ -236,7 +236,7 @@
                                 android:fontFamily="sans-serif-light"
                                 android:inputType="text"
                                 android:textColor="#000000"
-                                android:textSize="23sp" />
+                                android:textSize="15sp" />
 
                             <ImageButton
                                 android:id="@+id/btnAddress"
@@ -250,7 +250,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:layout_marginTop="15dp"
+                            android:layout_marginTop="5dp"
                             android:background="@color/grey" />
 
                     </LinearLayout>
@@ -259,8 +259,7 @@
                 </LinearLayout>
 
             </RelativeLayout>
+
         </RelativeLayout>
-
     </ScrollView>
-
 </RelativeLayout>

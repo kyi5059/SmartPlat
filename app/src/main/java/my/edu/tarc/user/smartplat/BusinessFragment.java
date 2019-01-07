@@ -60,13 +60,13 @@ public class BusinessFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(),EventPop.class);
+                Intent intent = new Intent(getActivity(),BusinessPop.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("title",BusinessList.get(position).getTitle());
-                bundle.putString("desc",BusinessList.get(position).getDescription());
-                bundle.putString("datetime",BusinessList.get(position).getOperationTime());
-                bundle.putString("venue",BusinessList.get(position).getVenue());
-                bundle.putInt("image",BusinessList.get(position).getImage());
+                bundle.putString("title", BusinessList.get(position).getTitle());
+                bundle.putString("desc", BusinessList.get(position).getDescription());
+                bundle.putString("operationTime", BusinessList.get(position).getOperationTime());
+                bundle.putString("venue", BusinessList.get(position).getVenue());
+                bundle.putInt("image", BusinessList.get(position).getImage());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
