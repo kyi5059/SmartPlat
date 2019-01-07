@@ -56,7 +56,7 @@ public class BusinessFragment extends Fragment {
         listView = (ListView)view.findViewById(R.id.businessmenu);
         pDialog = new ProgressDialog(getContext());
         BusinessList = new ArrayList<>();
-        downloadCourse(getContext(), Constants.URL_SELECTBUSINESS);
+        downloadBusiness(getContext(), Constants.URL_SELECTBUSINESS);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -115,7 +115,7 @@ public class BusinessFragment extends Fragment {
         return view;
 
     }
-    private void downloadCourse(Context context, String url) {
+    private void downloadBusiness(Context context, String url) {
         // Instantiate the RequestQueue
         queue = Volley.newRequestQueue(context);
 
@@ -140,7 +140,7 @@ public class BusinessFragment extends Fragment {
                                 Business business = new Business(title,desc,operationTime,venue,image);
                                 BusinessList.add(business);
                             }
-                            loadEvent();
+                            loadBusiness();
                             if (pDialog.isShowing())
                                 pDialog.dismiss();
                         } catch (Exception e) {
@@ -164,7 +164,7 @@ public class BusinessFragment extends Fragment {
         queue.add(jsonObjectRequest);
     }
 
-    private void loadEvent() {
+    private void loadBusiness() {
         final BusinessFragment.BusinessAdapter adapter = new BusinessFragment.BusinessAdapter(getActivity(), R.layout.business_item_layout, BusinessList);
         listView.setAdapter(adapter);
         if(BusinessList != null){

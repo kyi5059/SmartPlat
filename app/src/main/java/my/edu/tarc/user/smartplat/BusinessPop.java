@@ -46,13 +46,5 @@ public class BusinessPop extends AppCompatActivity {
         int height = dm.heightPixels;
 
         getWindow().setLayout((int)(width*.8), (int)(height*.8));
-
-        image.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                image.setColorFilter(Color.RED);
-                return false;
-            }
-        });
     }
 }
