@@ -21,6 +21,10 @@
         android:id="@+id/service"
         android:icon="@drawable/ic_service_24dp"
         android:title="Service" />
+    <item
+        android:id="@+id/comment"
+        android:icon="@drawable/ic_comment_24dp"
+        android:title="Comment" />
     <item android:title="General">
         <menu>
             <item

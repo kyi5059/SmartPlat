@@ -1,19 +1,20 @@
 package my.edu.tarc.user.smartplat;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.TooltipCompat;
+import android.support.v4.app.FragmentManager;
 import android.util.DisplayMetrics;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class EventPop extends AppCompatActivity {
     ImageView image;
     TextView textViewTitle, textViewDesc, textViewDateTime, textViewVenue, textViewFee;
+    Button button;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class EventPop extends AppCompatActivity {
         textViewDateTime = findViewById(R.id.datetime);
         textViewVenue = findViewById(R.id.venue);
         textViewFee = findViewById(R.id.fee);
+        button = findViewById(R.id.button);
 
         Bundle bundle = getIntent().getExtras();
         textViewTitle.setText(bundle.getString("title"));
@@ -42,12 +44,5 @@ public class EventPop extends AppCompatActivity {
 
         getWindow().setLayout((int)(width*.8), (int)(height*.8));
 
-        image.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                image.setColorFilter(Color.RED);
-                return false;
-            }
-        });
     }
 }
