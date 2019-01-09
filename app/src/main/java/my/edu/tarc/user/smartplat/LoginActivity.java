@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         if(SharedPrefManager.getInstance(this).isLoggedIn()){
+            checkVersionUpdate();
             finish();
             startActivity(new Intent(this, MainActivity.class));
             return;
@@ -49,6 +50,66 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
             }
         });
+    }
+
+    private void checkVersionUpdate(){
+        final String username = SharedPrefManager.getInstance(this).getUsername();
+        final String email = SharedPrefManager.getInstance(this).getUserEmail();
+        try {
+            StringRequest stringRequest = new StringRequest(
+                    Request.Method.POST,
+                    Constants.URL_CHECKVERSION,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try{
+                                JSONObject jsonObject = new JSONObject(response);
+                                if (!jsonObject.getBoolean("error")) {
+                                        int version = jsonObject.getInt("version");
+                                        if(version > SharedPrefManager.getInstance(getApplicationContext()).getVersion()){
+                                            SharedPrefManager.getInstance(getApplicationContext()).setUsername(jsonObject.getString("username"));
+                                            SharedPrefManager.getInstance(getApplicationContext()).setUserAddress(jsonObject.getString("addr"));
+                                            SharedPrefManager.getInstance(getApplicationContext()).setUserEmail(jsonObject.getString("email"));
+                                            SharedPrefManager.getInstance(getApplicationContext()).setUserContact(jsonObject.getString("contact"));
+                                            SharedPrefManager.getInstance(getApplicationContext()).setUserName(jsonObject.getString("name"));
+                                            SharedPrefManager.getInstance(getApplicationContext()).setVersion(version);
+                                        }
+                                    Toast.makeText(getApplicationContext(),
+                                            jsonObject.getString("message"),
+                                            Toast.LENGTH_LONG).show();
+
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                } else {
+                                    Toast.makeText(getApplicationContext(),
+                                            jsonObject.getString("message"),
+                                            Toast.LENGTH_LONG).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getApplicationContext(),
+                                    error.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    }
+            ) {
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("username", username);
+                    params.put("email", email);
+                    return params;
+                }
+            };
+            RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void userLogin() {

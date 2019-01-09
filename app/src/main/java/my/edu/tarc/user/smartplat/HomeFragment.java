@@ -36,26 +36,15 @@ public class HomeFragment extends Fragment {
         btnimg1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BusinessFragment businessFragment = new BusinessFragment();
+                ProductFragment productFragment = new ProductFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, businessFragment);
+                fragmentTransaction.replace(R.id.fragment_container, productFragment);
                 fragmentTransaction.commit();
             }
         });
 
         btnimg2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ServiceFragment serviceFragment = new ServiceFragment();
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, serviceFragment);
-                fragmentTransaction.commit();
-            }
-        });
-
-        btnimg3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EventFragment eventFragment = new EventFragment();
@@ -66,13 +55,24 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        btnimg3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BusinessFragment businessFragment = new BusinessFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, businessFragment);
+                fragmentTransaction.commit();
+            }
+        });
+
         btnimg4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProductFragment productFragment = new ProductFragment();
+                ServiceFragment serviceFragment = new ServiceFragment();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, productFragment);
+                fragmentTransaction.replace(R.id.fragment_container, serviceFragment);
                 fragmentTransaction.commit();
             }
         });

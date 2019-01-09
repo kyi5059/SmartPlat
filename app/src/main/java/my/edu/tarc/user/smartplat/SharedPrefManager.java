@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 public class SharedPrefManager {
     private static SharedPrefManager mInstance;
     private static Context mCtx;
-
+    private static final int KEY_VERSION = 1;
     private static final String SHARED_PREF_NAME = "mysharedpref12";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_USER_ID = "userid";
@@ -64,18 +64,6 @@ public class SharedPrefManager {
         return true;
     }
 
-    public void refresh(){
-        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(KEY_USER_ID, KEY_USER_ID);
-        editor.putString(KEY_USERNAME, getUsername());
-        editor.putString(KEY_USER_NAME, getName());
-        editor.putString(KEY_USEREMAIL, getUserEmail());
-        editor.putString(KEY_USERCONTACT, getUserContact());
-        editor.putString(KEY_USERADDRESS, getUserContact());
-        editor.apply();
-    }
-
     public void setUsername(String name){
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -97,6 +85,18 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(KEY_USER_NAME, name);
+        editor.apply();
+    }
+
+    public int getVersion(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
+        return sharedPreferences.getInt(String.valueOf(KEY_VERSION), 1);
+    }
+
+    public void setVersion(int version){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(String.valueOf(KEY_VERSION), version);
         editor.apply();
     }
 

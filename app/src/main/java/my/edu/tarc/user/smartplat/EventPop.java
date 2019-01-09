@@ -44,5 +44,11 @@ public class EventPop extends AppCompatActivity {
 
         getWindow().setLayout((int)(width*.8), (int)(height*.8));
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(textViewTitle.getText().toString().trim());
+            }
+        });
     }
 }

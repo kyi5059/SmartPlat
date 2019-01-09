@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbarStyle="insideOverlay"
@@ -97,13 +98,6 @@
                                 android:textColor="#000000"
                                 android:textSize="15sp" />
 
-                            <ImageButton
-                                android:id="@+id/btnName"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:background="@drawable/ic_check_24dp" />
-
                         </RelativeLayout>
 
                         <View
@@ -143,60 +137,6 @@
                                 android:inputType="text"
                                 android:textColor="#000000"
                                 android:textSize="15sp" />
-
-                            <ImageButton
-                                android:id="@+id/btnPhone"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:background="@drawable/ic_check_24dp" />
-
-                        </RelativeLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@color/grey" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_email_24dp"
-                            android:text="@string/em"
-                            android:textColor="@color/headings"
-                            android:textSize="15sp" />
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:id="@+id/tv_Email"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:cursorVisible="true"
-                                android:enabled="true"
-                                android:focusableInTouchMode="true"
-                                android:fontFamily="sans-serif-light"
-                                android:inputType="text"
-                                android:textColor="#000000"
-                                android:textSize="15sp" />
-
-                            <ImageButton
-                                android:id="@+id/btnEmail"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:background="@drawable/ic_check_24dp" />
 
                         </RelativeLayout>
 
@@ -238,13 +178,6 @@
                                 android:textColor="#000000"
                                 android:textSize="15sp" />
 
-                            <ImageButton
-                                android:id="@+id/btnAddress"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:background="@drawable/ic_check_24dp" />
-
                         </RelativeLayout>
 
                         <View
@@ -261,5 +194,14 @@
             </RelativeLayout>
 
         </RelativeLayout>
-    </ScrollView>
+
+        </ScrollView>
+
+    <Button
+        android:layout_below="@+id/scrollView"
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorAccent"
+        android:text="Save"/>
 </RelativeLayout>
