@@ -1,5 +1,6 @@
 package my.edu.tarc.user.smartplat;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextUsername, editTextPassword;
     private Button buttonLogin, buttonRegister;
+    private ProgressDialog pDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
         buttonLogin = (Button) findViewById(R.id.Register);
         buttonRegister = (Button) findViewById(R.id.SignUp);
+
+        pDialog = new ProgressDialog(this);
 
         buttonLogin.setOnClickListener(this);
 
@@ -115,6 +119,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void userLogin() {
         final String username = editTextUsername.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
+        if (!pDialog.isShowing())
+            pDialog.setMessage("Logging In...");
+        pDialog.show();
         try {
             StringRequest stringRequest = new StringRequest(
                     Request.Method.POST,
@@ -129,13 +136,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                             .userLogin(jsonObject.getInt("id"),
                                                     jsonObject.getString("username"),
                                                     jsonObject.getString("email"));
-
+                                    if (pDialog.isShowing())
+                                        pDialog.dismiss();
                                     Toast.makeText(getApplicationContext(),
                                             "User Login Successful",
                                             Toast.LENGTH_LONG).show();
 
                                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 } else {
+                                    if (pDialog.isShowing())
+                                        pDialog.dismiss();
                                     Toast.makeText(getApplicationContext(),
                                             jsonObject.getString("message"),
                                             Toast.LENGTH_LONG).show();
@@ -148,6 +158,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
+                            if (pDialog.isShowing())
+                                pDialog.dismiss();
                             Toast.makeText(getApplicationContext(),
                                     error.getMessage(),
                                     Toast.LENGTH_LONG).show();
