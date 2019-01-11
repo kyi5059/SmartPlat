@@ -68,6 +68,7 @@ public class ProductFragment extends Fragment {
                 bundle.putDouble("price",ProductList.get(position).getPrice());
                 bundle.putString("location",ProductList.get(position).getLocation());
                 bundle.putInt("image",ProductList.get(position).getImage());
+                bundle.putString("url", ProductList.get(position).getUrl());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -89,7 +90,8 @@ public class ProductFragment extends Fragment {
                                         ProductList.get(pos).getDescription(),
                                         ProductList.get(pos).getPrice(),
                                         ProductList.get(pos).getLocation(),
-                                        ProductList.get(pos).getImage());
+                                        ProductList.get(pos).getImage(),
+                                        ProductList.get(pos).getUrl());
                         filtered.add(product);
                     }
                     adapter = new ProductFragment.ProductAdapter(getActivity(), R.layout.product_item_layout, filtered);
@@ -141,7 +143,8 @@ public class ProductFragment extends Fragment {
                                 double price = eventResponse.getDouble("price");
                                 String location = eventResponse.getString("location");
                                 int image = eventResponse.getInt("image");
-                                Product product = new Product(title,desc,price,location,image);
+                                String url = eventResponse.getString("url");
+                                Product product = new Product(title,desc,price,location,image, url);
                                 ProductList.add(product);
                             }
                             loadProduct();

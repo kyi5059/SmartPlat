@@ -67,6 +67,7 @@ public class BusinessFragment extends Fragment {
                 bundle.putString("operationTime", BusinessList.get(position).getOperationTime());
                 bundle.putString("venue", BusinessList.get(position).getVenue());
                 bundle.putInt("image", BusinessList.get(position).getImage());
+                bundle.putString("url", BusinessList.get(position).getUrl());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -88,7 +89,8 @@ public class BusinessFragment extends Fragment {
                                         BusinessList.get(pos).getDescription(),
                                         BusinessList.get(pos).getOperationTime(),
                                         BusinessList.get(pos).getVenue(),
-                                        BusinessList.get(pos).getImage());
+                                        BusinessList.get(pos).getImage(),
+                                        BusinessList.get(pos).getUrl());
                         filtered.add(business);
                     }
                     adapter = new BusinessFragment.BusinessAdapter(getActivity(), R.layout.business_item_layout, filtered);
@@ -137,7 +139,8 @@ public class BusinessFragment extends Fragment {
                                 String operationTime = eventResponse.getString("operationTime");
                                 String venue = eventResponse.getString("venue");
                                 int image = eventResponse.getInt("image");
-                                Business business = new Business(title,desc,operationTime,venue,image);
+                                String url = eventResponse.getString("url");
+                                Business business = new Business(title, desc, operationTime, venue, image, url);
                                 BusinessList.add(business);
                             }
                             loadBusiness();

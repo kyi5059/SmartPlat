@@ -6,13 +6,15 @@ public class Product {
     private double price;
     private String location;
     private int image;
+    private String url;
 
-    public Product(String title, String description, double price, String location, int image) {
+    public Product(String title, String description, double price, String location, int image, String url) {
         this.title = title;
         this.description = description;
         this.price = price;
         this.location = location;
         this.image = image;
+        this.url = url;
 
     }
 
@@ -56,6 +58,13 @@ public class Product {
         this.image = image;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String toString() {
         return "Event{" +

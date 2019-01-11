@@ -67,6 +67,7 @@ public class ServiceFragment extends Fragment {
                 bundle.putString("desc", ServiceList.get(position).getDescription());
                 bundle.putString("location", ServiceList.get(position).getLocation());
                 bundle.putInt("image", ServiceList.get(position).getImage());
+                bundle.putString("place", ServiceList.get(position).getPlace());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -87,7 +88,8 @@ public class ServiceFragment extends Fragment {
                                 new Service(ServiceList.get(pos).getTitle(),
                                         ServiceList.get(pos).getDescription(),
                                         ServiceList.get(pos).getLocation(),
-                                        ServiceList.get(pos).getImage());
+                                        ServiceList.get(pos).getImage(),
+                                        ServiceList.get(pos).getPlace());
                         filtered.add(service);
                     }
                     adapter = new ServiceAdapter(getActivity(), R.layout.event_item_layout, filtered);
@@ -135,7 +137,8 @@ public class ServiceFragment extends Fragment {
                                 String desc = eventResponse.getString("desc");
                                 String location = eventResponse.getString("location");
                                 int image = eventResponse.getInt("image");
-                                Service service = new Service(title, desc, location, image);
+                                String place = eventResponse.getString("place");
+                                Service service = new Service(title, desc, location, image, place);
                                 ServiceList.add(service);
                             }
                             loadService();

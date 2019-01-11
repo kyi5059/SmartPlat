@@ -5,12 +5,14 @@ public class Service {
     private String description;
     private String location;
     private int image;
+    private String place;
 
-    public Service(String title, String description, String location, int image) {
+    public Service(String title, String description, String location, int image, String place) {
         this.title = title;
         this.description = description;
         this.location = location;
         this.image = image;
+        this.place = place;
     }
 
     public String getTitle() {
@@ -43,6 +45,14 @@ public class Service {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     @Override

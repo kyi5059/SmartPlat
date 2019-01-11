@@ -7,14 +7,16 @@ public class Event {
     private String venue;
     private double fee;
     private int image;
+    private String place;
 
-    public Event(String title, String description, String datetime, String venue, double fee, int image) {
+    public Event(String title, String description, String datetime, String venue, double fee, int image, String place) {
         this.title = title;
         this.description = description;
         this.datetime = datetime;
         this.venue = venue;
         this.fee = fee;
         this.image = image;
+        this.place= place;
     }
 
     public String getTitle() {
@@ -63,6 +65,14 @@ public class Event {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     @Override

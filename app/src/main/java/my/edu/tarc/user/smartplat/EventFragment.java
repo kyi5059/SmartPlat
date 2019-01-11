@@ -65,6 +65,7 @@ public class EventFragment extends Fragment {
                 bundle.putString("venue", EventList.get(position).getVenue());
                 bundle.putDouble("fee", EventList.get(position).getFee());
                 bundle.putInt("image", EventList.get(position).getImage());
+                bundle.putString("place", EventList.get(position).getPlace());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -87,7 +88,8 @@ public class EventFragment extends Fragment {
                                         EventList.get(pos).getDatetime(),
                                         EventList.get(pos).getVenue(),
                                         EventList.get(pos).getFee(),
-                                        EventList.get(pos).getImage());
+                                        EventList.get(pos).getImage(),
+                                        EventList.get(pos).getPlace());
                         filtered.add(event);
                     }
                     adapter = new EventFragment.EventAdapter(getActivity(), R.layout.event_item_layout, filtered);
@@ -138,7 +140,8 @@ public class EventFragment extends Fragment {
                                 String venue = eventResponse.getString("venue");
                                 double fee = eventResponse.getDouble("fee");
                                 int image = eventResponse.getInt("image");
-                                Event event = new Event(title, desc, datetime, venue, fee, image);
+                                String place = eventResponse.getString("place");
+                                Event event = new Event(title, desc, datetime, venue, fee, image, place);
                                 EventList.add(event);
                             }
                             loadEvent();
